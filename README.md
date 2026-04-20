@@ -1,36 +1,58 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# EcoScan
 
-## Getting Started
+EcoScan is a web-based application that uses artificial intelligence to analyze images of everyday items and provide insights about their environmental impact, including recyclability.
 
-First, run the development server:
+## Live Demo
+(Add your Vercel link here after deployment)
+
+## Overview
+
+EcoScan allows users to capture an image using their device camera and analyze it using AI. The system identifies the object and returns structured information about its material, recyclability, and environmental impact.
+
+## Core Features
+
+- **Live Camera Capture**  
+  Access the device camera and capture images in real time.
+
+- **AI-Powered Analysis**  
+  Uses the Google Gemini Vision API to identify objects and generate environmental insights.
+
+- **Structured Output**  
+  Returns clear, professional results including:
+  - Object name  
+  - Material  
+  - Recyclability  
+  - Recycling locations  
+  - Environmental impact  
+  - Disposal recommendations  
+
+- **Responsive UI**  
+  Clean interface with loading states, error handling, and smooth interactions.
+
+## Tech Stack
+
+- Frontend: React  
+- Framework: Next.js (App Router)  
+- Language: TypeScript  
+- Styling: Tailwind CSS  
+- Backend: Next.js API Routes  
+- AI Integration: Google Gemini API  
+- Runtime: Node.js  
+
+## How It Works
+
+1. User opens the scanner page  
+2. Camera access is requested  
+3. User captures an image  
+4. Image is converted to base64  
+5. Image is sent to backend API  
+6. Backend sends request to Gemini API  
+7. AI analyzes and returns results  
+8. Results are displayed on screen  
+
+## Environment Setup
+
+Create a `.env.local` file:
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
-
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+GOOGLE_API_KEY=your_api_key_here
